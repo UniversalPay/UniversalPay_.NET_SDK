@@ -27,7 +27,6 @@ namespace Turnkey
 
         protected override void PreValidateParams(Dictionary<String, String> inputParams) {
             List<String> requiredParams = new List<String>();
-            requiredParams.Add("country");
             requiredParams.Add("currency");
             foreach (KeyValuePair<String, String> entry in inputParams) {
                 if (entry.Value != null && entry.Value.Trim().Length > 0) {
@@ -40,6 +39,7 @@ namespace Turnkey
 
         protected override Dictionary<String, String> GetTokenParams(Dictionary<String, String> inputParams) {
             Dictionary<String, String> tokenParam = TokenParameters;
+            tokenParam = tokenParam.Concat(LocalisationParameters.Where(x => !tokenParam.ContainsKey(x.Key))).ToDictionary(x => x.Key, x => x.Value);
             tokenParam.Add("action", ActionType.GET_AVAILABLE_PAYSOLS.GetCode());
             GenerateRestParameters(inputParams, tokenParam, new ParamGetAvailablePaymentSolutionsSessionToken());
             return tokenParam;

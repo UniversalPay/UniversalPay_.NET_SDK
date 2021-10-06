@@ -17,9 +17,9 @@ namespace Turnkey.Tests.Models
 
             // TOKENIZE
             Dictionary<String, String> tokenizeParams = new Dictionary<string, string>();
-            tokenizeParams.Add("number", "5424180279791732");
-            tokenizeParams.Add("nameOnCard", "mastercard");
-            tokenizeParams.Add("expiryYear", "2021");
+            tokenizeParams.Add("number", "5454545454545454");
+            tokenizeParams.Add("nameOnCard", "test");
+            tokenizeParams.Add("expiryYear", "2023");
             tokenizeParams.Add("expiryMonth", "04");
 
             TokenizeCall tokenizeCall = new TokenizeCall(config, tokenizeParams);
@@ -28,8 +28,7 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> authParams = new Dictionary<String, String>();
             authParams.Add("amount", "20.0");
             authParams.Add("channel", Channel.ECOM.GetCode());
-            authParams.Add("country", CountryCode.PL.GetCode());
-            authParams.Add("currency", CurrencyCode.PLN.GetCode());
+            authParams.Add("currency", CurrencyCode.EUR.GetCode());
             authParams.Add("paymentSolutionId", "500");
             authParams.Add("customerId", tokenizeResult["customerId"]);
             authParams.Add("specinCreditCardToken", tokenizeResult["cardToken"]);
@@ -46,8 +45,6 @@ namespace Turnkey.Tests.Models
                 // VOID
                 Dictionary<String, String> inputParams = new Dictionary<String, String>();
                 inputParams.Add("originalMerchantTxId", authResult["merchantTxId"]);
-                //inputParams.Add("country", "FR");
-                //inputParams.Add("currency", "EUR");
 
                 VoidCall call = new VoidCall(config, inputParams);
                 Dictionary<String, String> result = call.Execute();
@@ -65,9 +62,9 @@ namespace Turnkey.Tests.Models
 
             // TOKENIZE
             Dictionary<String, String> tokenizeParams = new Dictionary<string, string>();
-            tokenizeParams.Add("number", "5424180279791732");
-            tokenizeParams.Add("nameOnCard", "mastercard");
-            tokenizeParams.Add("expiryYear", "2021");
+            tokenizeParams.Add("number", "5454545454545454");
+            tokenizeParams.Add("nameOnCard", "test");
+            tokenizeParams.Add("expiryYear", "2023");
             tokenizeParams.Add("expiryMonth", "04");
 
             TokenizeCall tokenizeCall = new TokenizeCall(config, tokenizeParams);
@@ -76,8 +73,7 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> authParams = new Dictionary<String, String>();
             authParams.Add("amount", "20.0");
             authParams.Add("channel", Channel.ECOM.GetCode());
-            authParams.Add("country", CountryCode.PL.GetCode());
-            authParams.Add("currency", CurrencyCode.PLN.GetCode());
+            authParams.Add("currency", CurrencyCode.EUR.GetCode());
             authParams.Add("paymentSolutionId", "500");
             authParams.Add("customerId", tokenizeResult["customerId"]);
             authParams.Add("specinCreditCardToken", tokenizeResult["cardToken"]);
@@ -103,8 +99,6 @@ namespace Turnkey.Tests.Models
                     // VOID
                     Dictionary<String, String> inputParams = new Dictionary<String, String>();
                     inputParams.Add("originalMerchantTxId", authResult["merchantTxId"]);
-                    //inputParams.Add("country", "FR");
-                    //inputParams.Add("currency", "EUR");
 
                     VoidCall call = new VoidCall(config, inputParams);
                     Dictionary<String, String> result = call.Execute();
@@ -124,9 +118,9 @@ namespace Turnkey.Tests.Models
 
             // TOKENIZE
             Dictionary<String, String> tokenizeParams = new Dictionary<string, string>();
-            tokenizeParams.Add("number", "5424180279791732");
-            tokenizeParams.Add("nameOnCard", "mastercard");
-            tokenizeParams.Add("expiryYear", "2021");
+            tokenizeParams.Add("number", "5454545454545454");
+            tokenizeParams.Add("nameOnCard", "test");
+            tokenizeParams.Add("expiryYear", "2023");
             tokenizeParams.Add("expiryMonth", "04");
 
             TokenizeCall tokenizeCall = new TokenizeCall(config, tokenizeParams);
@@ -135,8 +129,7 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> authParams = new Dictionary<String, String>();
             authParams.Add("amount", "20.0");
             authParams.Add("channel", Channel.ECOM.GetCode());
-            authParams.Add("country", CountryCode.PL.GetCode());
-            authParams.Add("currency", CurrencyCode.PLN.GetCode());
+            authParams.Add("currency", CurrencyCode.EUR.GetCode());
             authParams.Add("paymentSolutionId", "500");
             authParams.Add("customerId", tokenizeResult["customerId"]);
             authParams.Add("specinCreditCardToken", tokenizeResult["cardToken"]);
@@ -153,8 +146,6 @@ namespace Turnkey.Tests.Models
                 // VOID
                 Dictionary<String, String> inputParams = new Dictionary<String, String>();
                 inputParams.Add("originalMerchantTxId", purchaseResult["merchantTxId"]);
-                //inputParams.Add("country", "FR");
-                //inputParams.Add("currency", "EUR");
 
                 VoidCall call = new VoidCall(config, inputParams);
                 Dictionary<String, String> result = call.Execute();

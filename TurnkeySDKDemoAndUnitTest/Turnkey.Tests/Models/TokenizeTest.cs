@@ -14,9 +14,9 @@ namespace Turnkey.Tests.Models
         public void noExTestCall()
         {
             Dictionary<String, String> inputParams = new Dictionary<string, string>();
-            inputParams.Add("number", "5424180279791732");
-            inputParams.Add("nameOnCard", "mastercard");
-            inputParams.Add("expiryYear", "2021");
+            inputParams.Add("number", "5454545454545454");
+            inputParams.Add("nameOnCard", "test");
+            inputParams.Add("expiryYear", "2023");
             inputParams.Add("expiryMonth", "04");
             inputParams.Add("customerId", "123456789");
             inputParams.Add("cardDescription", "test");
@@ -37,9 +37,9 @@ namespace Turnkey.Tests.Models
         public void ExExpTestCall()
         {
             Dictionary<String, String> inputParams = new Dictionary<string, string>();
-            inputParams.Add("number", "5424180279791732");
-            inputParams.Add("nameOnCard", "mastercard");
-            inputParams.Add("expiryYear", "2010");
+            inputParams.Add("number", "5454545454545454");
+            inputParams.Add("nameOnCard", "test");
+            inputParams.Add("expiryYear", "2023");
 
             /*Init appliction configuration*/
             ApplicationConfig config = ObjectFactory.config;

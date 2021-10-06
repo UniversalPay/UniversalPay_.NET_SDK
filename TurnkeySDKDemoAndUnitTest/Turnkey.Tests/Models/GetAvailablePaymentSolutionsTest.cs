@@ -17,7 +17,6 @@ namespace Turnkey.Tests.Models
             ApplicationConfig config = ObjectFactory.config;
 
             Dictionary<String, String> inputParams = new Dictionary<string, string>();
-            inputParams.Add("country", CountryCode.FR.GetCode());
             inputParams.Add("currency", CurrencyCode.EUR.GetCode());
 
             //Do  GetAvailablePaymentSolutions

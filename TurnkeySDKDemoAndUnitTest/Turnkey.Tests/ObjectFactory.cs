@@ -21,9 +21,11 @@ namespace Turnkey.Tests
                     string allowOriginUrl = "http://localhost:8080";
                     string merchantLandingPageUrl = "http://localhost:8080/";
                     string environment = "UAT";
+                    string country = "IE";
+                    string language = "en";
 
                     m_config = new ApplicationConfig(merchantID, password, allowOriginUrl, merchantNotificationUrl,
-                                                             merchantLandingPageUrl, environment);
+                                                             merchantLandingPageUrl, environment, country, language);
                     return m_config;
                 }
                 else

@@ -31,7 +31,6 @@ namespace Turnkey
             requiredParams.Add("amount");
             requiredParams.Add("channel");
             requiredParams.Add("merchantNotificationUrl");
-            requiredParams.Add("country");
             requiredParams.Add("currency");
             requiredParams.Add("paymentSolutionId");
             foreach (KeyValuePair<String, String> entry in inputParams)
@@ -48,6 +47,7 @@ namespace Turnkey
         protected override Dictionary<String, String> GetTokenParams(Dictionary<String, String> inputParams)
         {
             Dictionary<String, String> tokenParam = TokenParameters;
+            tokenParam = tokenParam.Concat(LocalisationParameters.Where(x => !tokenParam.ContainsKey(x.Key))).ToDictionary(x => x.Key, x => x.Value);
             tokenParam.Add("action", ActionType.PURCHASE.GetCode());
             GenerateRestParameters(inputParams, tokenParam, new ParamAuthHostedPaymentToken());
             return tokenParam;

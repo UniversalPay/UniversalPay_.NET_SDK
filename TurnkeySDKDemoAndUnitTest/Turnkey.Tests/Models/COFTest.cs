@@ -24,9 +24,9 @@ namespace Turnkey.Tests.Models
         private Dictionary<String, String> COFFirstTran_Auth(ApplicationConfig config)
         {
             Dictionary<String, String> inputParams = new Dictionary<string, string>();
-            inputParams.Add("number", "5424180279791732");
-            inputParams.Add("nameOnCard", "mastercard");
-            inputParams.Add("expiryYear", "2021");
+            inputParams.Add("number", "5454545454545454");
+            inputParams.Add("nameOnCard", "test");
+            inputParams.Add("expiryYear", "2023");
             inputParams.Add("expiryMonth", "04");
 
             inputParams.Add("cardOnFileType", "First");
@@ -37,8 +37,7 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> authParams = new Dictionary<String, String>();
             authParams.Add("amount", "20.0");
             authParams.Add("channel", Channel.ECOM.GetCode());
-            authParams.Add("country", CountryCode.PL.GetCode());
-            authParams.Add("currency", CurrencyCode.PLN.GetCode());
+            authParams.Add("currency", CurrencyCode.EUR.GetCode());
             authParams.Add("paymentSolutionId", "500");
             authParams.Add("customerId", tokenizeResult["customerId"]);
             authParams.Add("specinCreditCardToken", tokenizeResult["cardToken"]);
@@ -62,9 +61,9 @@ namespace Turnkey.Tests.Models
         private Dictionary<String, String> COFSubTrans_CIT_Auth(ApplicationConfig config, string merchantTrxID)
         {
             Dictionary<String, String> inputParams = new Dictionary<string, string>();
-            inputParams.Add("number", "5424180279791732");
-            inputParams.Add("nameOnCard", "mastercard");
-            inputParams.Add("expiryYear", "2021");
+            inputParams.Add("number", "5454545454545454");
+            inputParams.Add("nameOnCard", "test");
+            inputParams.Add("expiryYear", "2023");
             inputParams.Add("expiryMonth", "04");
 
             inputParams.Add("cardOnFileType", "Repeat");
@@ -77,8 +76,7 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> authParams = new Dictionary<String, String>();
             authParams.Add("amount", "20.0");
             authParams.Add("channel", Channel.ECOM.GetCode());
-            authParams.Add("country", CountryCode.PL.GetCode());
-            authParams.Add("currency", CurrencyCode.PLN.GetCode());
+            authParams.Add("currency", CurrencyCode.EUR.GetCode());
             authParams.Add("paymentSolutionId", "500");
             authParams.Add("customerId", tokenizeResult["customerId"]);
             authParams.Add("specinCreditCardToken", tokenizeResult["cardToken"]);
@@ -106,7 +104,6 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> subCITAuthResult = COFSubTrans_CIT_Auth(config, firstCOFAuthResult["merchantTxId"]);
 
             Assert.AreEqual(subCITAuthResult["result"], "redirection");
-
         }
 
         /// <summary>
@@ -119,9 +116,9 @@ namespace Turnkey.Tests.Models
         private Dictionary<String, String> COFInitiateRecurringTran_Purchase(ApplicationConfig config, string merchantTrxID)
         {
             Dictionary<String, String> inputParams = new Dictionary<string, string>();
-            inputParams.Add("number", "5424180279791732");
-            inputParams.Add("nameOnCard", "mastercard");
-            inputParams.Add("expiryYear", "2021");
+            inputParams.Add("number", "5454545454545454");
+            inputParams.Add("nameOnCard", "test");
+            inputParams.Add("expiryYear", "2023");
             inputParams.Add("expiryMonth", "04");
 
             //Card on file parameter
@@ -143,8 +140,7 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> authParams = new Dictionary<String, String>();
             authParams.Add("amount", "20.0");
             authParams.Add("channel", Channel.ECOM.GetCode());
-            authParams.Add("country", CountryCode.PL.GetCode());
-            authParams.Add("currency", CurrencyCode.PLN.GetCode());
+            authParams.Add("currency", CurrencyCode.EUR.GetCode());
             authParams.Add("paymentSolutionId", "500");
             authParams.Add("customerId", tokenizeResult["customerId"]);
             authParams.Add("specinCreditCardToken", tokenizeResult["cardToken"]);
@@ -172,7 +168,6 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> recurringResult = COFInitiateRecurringTran_Purchase(config, firstCOFAuthResult["merchantTxId"]);
 
             Assert.AreEqual(recurringResult["result"], "redirection");
-
         }
 
 
@@ -187,9 +182,9 @@ namespace Turnkey.Tests.Models
         private Dictionary<String, String> COFSubTrans_MIT_Auth(ApplicationConfig config, string merchantTrxID)
         {
             Dictionary<String, String> inputParams = new Dictionary<string, string>();
-            inputParams.Add("number", "5424180279791732");
-            inputParams.Add("nameOnCard", "mastercard");
-            inputParams.Add("expiryYear", "2021");
+            inputParams.Add("number", "5454545454545454");
+            inputParams.Add("nameOnCard", "test");
+            inputParams.Add("expiryYear", "2023");
             inputParams.Add("expiryMonth", "04");
 
             inputParams.Add("cardOnFileType", "Repeat");
@@ -202,8 +197,7 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> authParams = new Dictionary<String, String>();
             authParams.Add("amount", "20.0");
             authParams.Add("channel", Channel.ECOM.GetCode());
-            authParams.Add("country", CountryCode.PL.GetCode());
-            authParams.Add("currency", CurrencyCode.PLN.GetCode());
+            authParams.Add("currency", CurrencyCode.EUR.GetCode());
             authParams.Add("paymentSolutionId", "500");
             authParams.Add("customerId", tokenizeResult["customerId"]);
             authParams.Add("specinCreditCardToken", tokenizeResult["cardToken"]);
@@ -232,7 +226,6 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> subCITAuthResult = COFSubTrans_MIT_Auth(config, firstCOFAuthResult["merchantTxId"]);
 
             Assert.AreEqual(subCITAuthResult["result"], "redirection");
-
         }
     }
 }

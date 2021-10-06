@@ -28,6 +28,7 @@ namespace Turnkey
         protected Dictionary<String, String> inputParams;
         protected string validationMessage = string.Empty;
         private static Dictionary<String, String> tokenParams = new Dictionary<string, string>();
+        private static Dictionary<String, String> localisationParams = new Dictionary<string, string>();
 
         //Define global token used parameters
         public Dictionary<String, String> TokenParameters
@@ -43,12 +44,24 @@ namespace Turnkey
             }
         }
 
+        //Define localisation token used parameters
+        public Dictionary<String, String> LocalisationParameters
+        {
+            get
+            {
+                localisationParams.Clear();
+                localisationParams.Add("country", config.Country);
+                localisationParams.Add("language", config.Language);
+                return localisationParams;
+            }
+        }
+
         /// <summary>
         /// Init base call object, validate the required parameters.
         /// </summary>
         /// <param name="config"></param>
         /// <param name="inputParams"></param>
-         public ApiCall(ApplicationConfig config, Dictionary<String, String> inputParams) {
+        public ApiCall(ApplicationConfig config, Dictionary<String, String> inputParams) {
              
              try
              {

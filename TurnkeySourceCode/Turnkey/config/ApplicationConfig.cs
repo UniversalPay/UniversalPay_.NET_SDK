@@ -34,10 +34,12 @@ namespace Turnkey.config
         public string MerchantLandingPageUrl { get; set; }
         public string MerchantId { get; set; }
         public string Password { get; set; }
+        public string Country { get; set; }
+        public string Language { get; set; }
 
         //Indication current environment is UAT or Production
         public string TurnkeyEnvironment { get; set; }
-        public ApplicationConfig(string merchantId,string password,string allowOriginUrl,string merchantNotificationUrl,string merchantLandingPageUrl="",string environment="UAT")
+        public ApplicationConfig(string merchantId,string password,string allowOriginUrl,string merchantNotificationUrl,string merchantLandingPageUrl="",string environment="UAT", string country= "ES", string language="es")
         { 
             MerchantId = merchantId;
             Password = password;
@@ -45,6 +47,8 @@ namespace Turnkey.config
             MerchantNotificationUrl = merchantNotificationUrl;
             MerchantLandingPageUrl = merchantLandingPageUrl;
             TurnkeyEnvironment = environment;
+            Country = country;
+            Language = language;
 
             try
             {

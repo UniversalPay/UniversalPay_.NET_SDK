@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Parameters>
   <Environment value="UAT">
-      <SessionTokenRequestUrl>https://api.test.universalpay.es/token</SessionTokenRequestUrl>
-      <PaymentOperationActionUrl>https://api.test.universalpay.es/payments</PaymentOperationActionUrl>
-      <CashierUrl>https://cashierui.test.universalpay.es/ui/cashier</CashierUrl>
-      <CashierMobileUrl>https://cashierui-apiqa.test.myriadpayments.com/react-frontend/index.html</CashierMobileUrl>
-      <JavaScriptUrl>https://cashierui.test.universalpay.es/js/api.js</JavaScriptUrl>
-    </Environment>
+    <SessionTokenRequestUrl>https://api.test.universalpay.es/token</SessionTokenRequestUrl>
+    <PaymentOperationActionUrl>https://api.test.universalpay.es/payments</PaymentOperationActionUrl>
+    <CashierUrl>https://cashierui.test.universalpay.es/ui/cashier</CashierUrl>
+    <CashierMobileUrl>https://cashierui.test.universalpay.es/react-frontend/index.html</CashierMobileUrl>
+    <JavaScriptUrl>https://cashierui.test.universalpay.es/js/api.js</JavaScriptUrl>
+  </Environment>
   <Environment value="Production">
     <SessionTokenRequestUrl>https://api.universalpay.es/token</SessionTokenRequestUrl>
     <PaymentOperationActionUrl>https://api.universalpay.es/payments</PaymentOperationActionUrl>
     <CashierUrl>https://cashierui.universalpay.es/ui/cashier</CashierUrl>
-    <CashierMobileUrl>https://cashierui-api.myriadpayments.com/react-frontend/index.html</CashierMobileUrl>
+    <CashierMobileUrl>https://cashierui.universalpay.es/react-frontend/index.html</CashierMobileUrl>
     <JavaScriptUrl>https://cashierui.universalpay.es/js/api.js</JavaScriptUrl>
   </Environment>
 </Parameters>

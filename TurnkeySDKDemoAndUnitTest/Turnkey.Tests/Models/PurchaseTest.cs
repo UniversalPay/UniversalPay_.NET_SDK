@@ -17,9 +17,9 @@ namespace Turnkey.Tests.Models
 
             // TOKENIZE
             Dictionary<String, String> inputParams = new Dictionary<string, string>();
-            inputParams.Add("number", "5424180279791732");
-            inputParams.Add("nameOnCard", "mastercard");
-            inputParams.Add("expiryYear", "2021");
+            inputParams.Add("number", "5454545454545454");
+            inputParams.Add("nameOnCard", "test");
+            inputParams.Add("expiryYear", "2023");
             inputParams.Add("expiryMonth", "04");
 
             TokenizeCall tokenizeCall = new TokenizeCall(config, inputParams);
@@ -29,8 +29,7 @@ namespace Turnkey.Tests.Models
             Dictionary<String, String> purchaseParams = new Dictionary<String, String>();
             purchaseParams.Add("amount", "20.0");
             purchaseParams.Add("channel", Channel.ECOM.GetCode());
-            purchaseParams.Add("country", CountryCode.US.GetCode());
-            purchaseParams.Add("currency", CurrencyCode.USD.GetCode());
+            purchaseParams.Add("currency", CurrencyCode.EUR.GetCode());
             purchaseParams.Add("paymentSolutionId", "500");
             purchaseParams.Add("customerId", tokenizeResult["customerId"]);
             purchaseParams.Add("specinCreditCardToken", tokenizeResult["cardToken"]);

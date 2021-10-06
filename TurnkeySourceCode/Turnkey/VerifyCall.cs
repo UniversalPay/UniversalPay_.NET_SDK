@@ -29,7 +29,6 @@ namespace Turnkey
         {
             List<String> requiredParams = new List<String>();
             requiredParams.Add("channel");
-            requiredParams.Add("country");
             requiredParams.Add("currency");
             requiredParams.Add("merchantNotificationUrl");
             requiredParams.Add("amount");
@@ -48,6 +47,7 @@ namespace Turnkey
         protected override Dictionary<String, String> GetTokenParams(Dictionary<String, String> inputParams)
         {
             Dictionary<String, String> tokenParam = TokenParameters;
+            tokenParam = tokenParam.Concat(LocalisationParameters.Where(x => !tokenParam.ContainsKey(x.Key))).ToDictionary(x => x.Key, x => x.Value);
             tokenParam.Add("action", ActionType.VERIFY.GetCode());
             GenerateRestParameters(inputParams, tokenParam, new ParamAuthDirectToken());
             return tokenParam;
