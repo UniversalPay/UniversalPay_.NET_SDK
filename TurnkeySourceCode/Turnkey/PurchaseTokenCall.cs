@@ -32,7 +32,6 @@ namespace Turnkey
             requiredParams.Add("channel");
             requiredParams.Add("merchantNotificationUrl");
             requiredParams.Add("currency");
-            requiredParams.Add("paymentSolutionId");
             foreach (KeyValuePair<String, String> entry in inputParams)
             {
                 if (entry.Value != null && entry.Value.Trim().Length > 0)
